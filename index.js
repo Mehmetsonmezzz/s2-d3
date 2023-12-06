@@ -16,8 +16,9 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
-  // kodlar buraya
+function dosyaAdiniBul(path) {
+  const parts = path.split("/");
+  return parts[parts.length - 1];
 }
 
 /*
@@ -66,10 +67,18 @@ function ortalamaBul(arr) {
   örnek input:  [109, 216, 288, 143, 71, 185, -278, 194, 5]
   örnek output: [109, 216, 288, 143, 185, 194]
 */
+// let sayi = [109, 216, 288, 143, 185, 194];
 
-function ortalamadanBuyukleriBul(arr, cbOrtalama) {
-  const ortalama = cbOrtalama(arr);
+function ortalamadanBuyukleriBul(sayi, cbOrtalamaBul) {
+  let ortalama = cbOrtalamaBul(sayi);
+  if (ortalama === null) {
+    return null;
+  }
+  const ortalamadanBuyukler = sayi.filter((number) => number >= ortalama);
+  return ortalamadanBuyukler;
 }
+
+console.log(ortalamadanBuyukleriBul([], ortalamaBul));
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
