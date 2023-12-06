@@ -38,8 +38,13 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamaBul(arr) {
+  let toplam = 0;
+  for (var i = 0; i < arr.length; i++) {
+    toplam += arr[i];
+  }
+  let ortalama = toplam / arr.length;
+  return ortalama;
 }
 
 /*
@@ -62,8 +67,8 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(arr, cbOrtalama) {
+  const ortalama = cbOrtalama(arr);
 }
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
